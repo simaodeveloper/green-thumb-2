@@ -1,0 +1,25 @@
+.o-title {
+  line-height: 1.2em;
+
+    &--highlight {
+      @include font-weight('bold');
+      font-size: 30px;
+      color: $text-color-primary;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 80px;
+      }
+    }
+
+    &--default {
+      font-size: 25px;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 35px;
+      }
+    }
+
+    &--primary {
+      font-size: 40px;
+    }
+}

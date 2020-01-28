@@ -1,0 +1,73 @@
+.o-catalog {
+  padding: 25px 0 70px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 65px;
+  }
+
+  &__container {
+    @extend %align-content-center;
+  }
+
+  &__logo {
+    margin-bottom: 40px;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__figure {
+    margin-bottom: 40px;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 65px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 40px;
+    color: $text-color-primary;
+    margin-bottom: 30px;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 60px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__grid {
+    width: 100vw;
+    position: relative;
+    overflow-x: auto;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: auto;
+      overflow-x: initial;
+    }
+  }
+
+  &__grid__container {
+    width: 2000px; // adicionar via JS
+    display: flex;
+    padding-bottom: 25px;
+    padding-right: 20px;
+
+    @media (min-width: $breakpoint-tablet) {
+      @include container($width: 960px, $sidepad: 0);
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+  }
+
+  &__grid__item {
+    width: 320px;
+    margin-left: 20px;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 33.3333%;
+      margin-left: 0;
+    }
+  }
+}

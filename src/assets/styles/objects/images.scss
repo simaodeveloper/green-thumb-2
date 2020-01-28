@@ -1,0 +1,42 @@
+.o-image {
+
+  &--dog {
+    width: 97px;
+    height: 80px;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 113px;
+      height: 92px;
+    }
+  }
+
+  &--wateringcan {
+    width: 118px;
+    height: 87px;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 156px;
+      height: 114px;
+    }
+  }
+
+  &--sun {
+    width: 103px;
+    height: 103px;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 136px;
+      height: 136px;
+    }
+  }
+
+  &--pick {
+    width: 157px;
+    height: 78px;
+
+    @media (min-width: $breakpoint-tablet) {
+      // width: 136px;
+      // height: 136px;
+    }
+  }
+}

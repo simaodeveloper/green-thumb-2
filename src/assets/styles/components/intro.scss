@@ -1,0 +1,68 @@
+.c-intro {
+  background: url(../images/illustration-home-mobile.png) no-repeat 240% 265%;
+  background-size: 103%;
+
+  // Iphone 5 / SE
+  @media (min-width: $breakpoint-mobile-small) and (min-height: $breakpoint-height-iphone5){
+    background-position: 270% 150%;
+  }
+
+  //Iphone 6 / 7 / 8 Plus
+  @media (min-width: $breakpoint-mobile) {
+    background-position: 270% 130%;
+  }
+
+  //Iphone X
+  @media (min-width: $breakpoint-mobile) and (min-height: $breakpoint-height-iphoneX) {
+    background-position: 270% bottom;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    background-image: url(../images/illustration-home.png);
+    background-position: 85% bottom;
+    background-size: 50%;
+  }
+
+
+  &__call-to-action {
+    margin-top: 7.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $breakpoint-tablet) {
+      display: block;
+      margin-top: 66px;
+    }
+  }
+
+  &__logo {
+    width: 180px;
+    height: 23px;
+    margin-bottom: 10vw;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 227px;
+      height: 29px;
+      margin-bottom: 98px;
+    }
+  }
+
+  &__title {
+    @include font-weight('bold');
+    margin-bottom: 10vw;
+    font-size: 35px;
+    line-height: 1.2em;
+    text-align: center;
+
+    @media (min-width: $breakpoint-mobile) {
+      font-size: 40px;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 28px;
+      font-size: 80px;
+      text-align: initial;
+    }
+  }
+}

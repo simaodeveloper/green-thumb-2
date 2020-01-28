@@ -1,0 +1,5 @@
+.o-container {
+  @include clearfix();
+  @include container();
+  height: 100%;
+}

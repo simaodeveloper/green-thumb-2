@@ -1,0 +1,23 @@
+.o-icon {
+  display: block;
+
+  &--fluid {
+    width: 100%;
+    height: 100%;
+  }
+
+  &--1x {
+    width: 26px;
+    height: 20px;
+  }
+
+  &--2x {
+    width: 54px;
+    height: 40px;
+  }
+
+  &--micro {
+    width: 16px;
+    height: 16px;
+  }
+}

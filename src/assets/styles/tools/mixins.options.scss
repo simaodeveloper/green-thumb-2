@@ -1,0 +1,21 @@
+@use 'sass:color';
+
+@mixin option-item-active($color-background, $color-foreground) {
+  &:hover,
+  &.is--activated {
+
+    .c-options__panel {
+      background: $color-background;
+      @include box-shadow(0px, 10px, 20px, $color-background, .6);
+    }
+
+    .c-options__icon {
+      fill: $color-foreground;
+
+    }
+    .c-options__text {
+      @include font-weight('bold');
+      color: $color-foreground;
+    }
+  }
+}

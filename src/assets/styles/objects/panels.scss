@@ -1,0 +1,10 @@
+.o-panel {
+  display: block;
+  border-radius: 5px;
+  padding: 20px;
+  background: $panel-bg-default-color;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 40px 0;
+  }
+}

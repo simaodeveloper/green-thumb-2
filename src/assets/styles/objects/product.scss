@@ -1,0 +1,45 @@
+.o-product {
+  background-color: $color-default;
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__container {
+    @extend %align-content-center;
+    padding: 25px 0 0;
+
+    @media (min-width: $breakpoint-tablet) {
+      @include container(960px, 0px);
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 80px;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media (min-width: $breakpoint-tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__grid__item {
+
+    @media (min-width: $breakpoint-tablet) {
+
+      &:last-child {
+        width: 410px;
+      }
+    }
+  }
+}

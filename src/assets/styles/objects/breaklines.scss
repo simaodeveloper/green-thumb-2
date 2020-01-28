@@ -1,0 +1,26 @@
+
+
+.o-breakline {
+
+  &--desktop-up {
+    @media (min-width: $breakpoint-desktop) {
+      display: block;
+    }
+  }
+
+  &--tablet-up {
+    @media (min-width: $breakpoint-tablet + 1) {
+      display: block;
+    }
+  }
+
+  &--mobile-down {
+    @media (max-width: $breakpoint-tablet) {
+      display: block;
+    }
+  }
+
+  &--mobile-up {
+    display: block;
+  }
+}

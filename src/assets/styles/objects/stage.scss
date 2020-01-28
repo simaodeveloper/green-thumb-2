@@ -1,0 +1,12 @@
+.o-stage {
+  @extend %full-viewport;
+
+  &__step {
+    @extend %full-viewport;
+    display: none;
+  }
+
+  .step--is-active {
+    display: block;
+  }
+}

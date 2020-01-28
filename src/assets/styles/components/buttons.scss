@@ -1,0 +1,58 @@
+.c-btn {
+  @include font-weight('light');
+  @include button-dimension(170px, 50px);
+  border-radius: 30px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: auto;
+  }
+
+  &--large {
+    @include button-dimension(184px, 55px);
+    padding: 0 20px;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: auto;
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &--default {
+    @include button-style(
+      $button-border-default-color,
+      $button-bg-default-color,
+      $button-text-default-color,
+      $button-icon-default-color
+    );
+  }
+
+  &--primary {
+    @include button-style(
+      $button-border-primary-color,
+      $button-bg-primary-color,
+      $button-text-primary-color,
+      $button-icon-primary-color
+    );
+  }
+
+  &--has-icon {
+    display: flex;
+    align-items: center;
+
+    .c-btn__text {
+      margin-left: 15px;
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+

@@ -1,0 +1,93 @@
+.o-survey {
+  @extend %align-content-center;
+  padding: 25px 0 70px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 65px
+  }
+
+  &__logo {
+    margin-bottom: 25px;
+  }
+
+  &__figure {
+    margin-bottom: 32px;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__image {
+    margin: 0 auto;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 35px;
+    line-height: 1.4em;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__text {
+    margin-top: -20px;
+    text-align: center;
+    line-height: 1.8em;
+    margin-bottom: 35px;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-top: -40px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__wrap {
+    width: 100%;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: auto;
+    }
+  }
+
+  &__options {
+    margin-bottom: 35px;
+    width: 100%;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $breakpoint-tablet) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+
+  &__button {
+    &:first-child {
+      margin-bottom: 32px;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      &:first-child {
+        margin-bottom: 0;
+
+        @include button-style(
+          $button-border-default-color,
+          $button-bg-default-color,
+          $button-text-default-color,
+          $button-icon-default-color
+        );
+      }
+    }
+  }
+}

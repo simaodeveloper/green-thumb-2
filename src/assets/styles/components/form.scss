@@ -1,0 +1,88 @@
+.c-form {
+  padding: 35px 15px;
+  background-color: $color-sixth;
+  color: $color-fourth;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 50px 50px 35px;
+  }
+
+  &--space-left {
+    margin-left: 20px;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-left: 0;
+    }
+  }
+
+  &__request {
+    @include clearfix();
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 1.8em;
+    margin-bottom: 40px;
+  }
+
+  &__label {
+    @include font-weight('bold');
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &__field {
+    margin-top: 30px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border: 0;
+    height: 44px;
+    padding: 0 20px;
+    border-radius: 25px;
+    background: $color-default;
+    font-size: 16px;
+
+    &::placeholder {
+      @include color($color-fourth, .4);
+    }
+  }
+
+  &__submit {
+    margin-top: 35px;
+
+    @media (min-width: $breakpoint-tablet) {
+      @include button-dimension(184px, 55px);
+      @include button-style(
+        $button-border-default-color,
+        $button-bg-default-color,
+        $button-text-default-color,
+        $button-icon-default-color
+      );
+      float: right;
+    }
+  }
+
+  &__message {
+    @extend %align-content-center;
+    display: none;
+
+    .c-form__description {
+      text-align: center;
+    }
+  }
+}
