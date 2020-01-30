@@ -1,8 +1,9 @@
 import path from 'path';
 
-import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import HandlebarsWebpackPlugin from 'handlebars-webpack-plugin';
 import SVGSpritemapPlugin from 'svg-spritemap-webpack-plugin';
 import ImageminPlugin from 'imagemin-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
@@ -25,8 +26,8 @@ export default (argv, mode) => ({
         use: {
           loader: 'babel-loader',
           options: {
-            sourceMaps: true
-          }
+            sourceMaps: true,
+          },
         },
       },
       {
@@ -35,8 +36,8 @@ export default (argv, mode) => ({
         query: {
           inlineRequires: '/images/',
           rootRelative: './src/templates/',
-          partialDirs: ['./src/templates/']
-        }
+          partialDirs: ['./src/templates/'],
+        },
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -47,62 +48,73 @@ export default (argv, mode) => ({
             loader: 'sass-loader',
             options: {
               implementation: sass,
-              sourceMap: true
+              sourceMap: true,
             },
           },
         ],
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        include: [
-          path.resolve(__dirname, 'src/assets/images')
-        ],
+        include: [path.resolve(__dirname, 'src/assets/images')],
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[hash:8].[ext]',
               outputPath: 'images/',
-              esModule: false
+              esModule: false,
             },
           },
         ],
       },
-    ]
+    ],
   },
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        handlebarsLoader: {}
-      }
-    }),
     new MiniCssExtractPlugin({
       filename: `styles/[name].[hash:8].css`,
       esModule: true,
     }),
     new SVGSpritemapPlugin(
-      path.resolve(__dirname, 'src/assets/images/icons/**/*.svg'), {
+      path.resolve(__dirname, 'src/assets/images/icons/**/*.svg'),
+      {
         output: {
           filename: 'images/icons.svg',
-          svgo: true
+          svgo: true,
         },
         sprite: {
-          prefix: 'svg-'
-        }
+          prefix: 'svg-',
+        },
       }
     ),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/assets/images/',
+        to: 'images/[name].[ext]',
+        ignore: ['icons/'],
+      },
+    ]),
     new ImageminPlugin({
-      test: '/\.(jpe?g|png|gif)$/i'
+      test: '/.(jpe?g|png|gif|svg)$/i',
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/templates/index.hbs'),
-      preload: false,
+      template: path.join(__dirname, 'dist', 'index.html'),
+      filename: path.join(__dirname, 'dist', 'index.html'),
+      inject: true,
+    }),
+    new HandlebarsWebpackPlugin({
+      entry: path.join(process.cwd(), 'src', 'templates', 'index.hbs'),
+      output: path.join(process.cwd(), 'dist', '[name].html'),
+      data: path.join(__dirname, 'src/data.json'),
+      partials: [
+        path.join(process.cwd(), 'src', 'templates', 'includes', '*.hbs'),
+        path.join(process.cwd(), 'src', 'templates', 'components', '*.hbs'),
+      ],
     }),
     new FaviconsWebpackPlugin({
       logo: './src/assets/images/favicon.png',
       outputPath: '/images/',
       prefix: '/images/',
-      cache: mode !== 'development'
-    })
-  ]
-})
+      cache: mode !== 'development',
+    }),
+  ],
+});

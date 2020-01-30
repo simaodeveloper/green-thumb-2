@@ -1,0 +1,50 @@
+<section class="o-stage__step o-wall" data-stage-step="3" data-step-label="Pets">
+  <div class="o-container">
+
+    <div class="o-survey">
+
+      <div class="o-survey__logo o-logo--wrap o-wall__logo">
+        {{> includes/logo url="images/logo-greenthumb.svg" alt="greenthumb logo" classname="o-wall__logo__image"}}
+      </div>
+
+      <figure class="o-survey__figure">
+        <img src="images/dog.png" alt="dog face" class="o-image--dog o-survey__image">
+      </figure>
+
+      <h2 class="o-survey__title o-title o-title--default o-color--default">
+        Do you have pets? <span class="o-breakline--mobile-down"></span>Do they <em class="t-text--bold">chew</em>
+        plants?
+      </h2>
+
+      <p class="o-survey__text o-color--default">
+        We are asking because some plants <span class="o-breakline--mobile-down"></span>can be <em
+          class="t-text--bold">toxic</em> for your buddy.
+      </p>
+
+      <div class="o-survey__wrap">
+        <div class="o-survey__options">
+          {{> components/options attributes="data-js-options" classname="c-options c-options--primary" options=survey.pets.options }}
+        </div>
+
+        <div class="o-survey__buttons">
+          <button data-stage-command="next"
+            class="c-btn c-btn--primary c-btn--large c-btn--has-icon t-text--light o-survey__button">
+            <span class="c-btn__icon">
+              <svg class="o-icon o-icon--1x">
+                <use xlink:href="images/icons.svg#svg-arrow-right" /></svg>
+            </span>
+            <span class="c-btn__text">Next</span>
+          </button>
+          <button data-stage-command="prev"
+            class="c-btn c-btn--default c-btn--large c-btn--has-icon t-text--light o-survey__button">
+            <span class="c-btn__icon">
+              <svg class="o-icon o-icon--1x">
+                <use xlink:href="images/icons.svg#svg-arrow-left" /></svg>
+            </span>
+            <span class="c-btn__text">Previous</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+{
+  "survey": {
+    "sun": {
+      "options": [
+        {
+          "icon": "high-sun",
+          "label": "High sunlight",
+          "group": "sunValue",
+          "value": "high"
+        },
+        {
+          "icon": "low-sun",
+          "label": "Low sunlight",
+          "group": "sunValue",
+          "value": "low"
+        },
+        {
+          "icon": "no-answer",
+          "label": "No sunlight",
+          "group": "sunValue",
+          "value": "no"
+        }
+      ]
+    },
+    "water": {
+      "options": [
+        {
+          "icon": "one-drop",
+          "label": "Rarely",
+          "group": "waterValue",
+          "value": "rarely"
+        },
+        {
+          "icon": "two-drops",
+          "label": "Regularly",
+          "group": "waterValue",
+          "value": "regularly"
+        },
+        {
+          "icon": "three-drops",
+          "label": "Daily",
+          "group": "waterValue",
+          "value": "daily"
+        }
+      ]
+    },
+    "pets": {
+      "options": [
+        {
+          "icon": "pet",
+          "label": "Yes",
+          "group": "petsValue",
+          "value": "true"
+        },
+        {
+          "icon": "no-answer",
+          "label": "No/They don’t care",
+          "group": "petsValue",
+          "value": "false"
+        }
+      ]
+    }
+  }
+}

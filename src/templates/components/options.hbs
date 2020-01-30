@@ -1,0 +1,12 @@
+<div class="c-options c-options--primary" {{ attributes }}>
+  {{#each options}}
+    <div class="c-options__item c-options__item--has-icon">
+      <div class="o-panel c-options__panel">
+        <svg class="c-options__icon o-icon o-icon--2x">
+          <use xlink:href="images/icons.svg#svg-{{ icon }}" /></svg>
+        <span class="c-options__text t-text--light">{{ label }}</span>
+        <input type="radio" name="{{ group }}" value="{{ value }}" class="c-options__input">
+      </div>
+    </div>
+  {{/each}}
+</div>

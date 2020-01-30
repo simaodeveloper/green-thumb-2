@@ -1,0 +1,46 @@
+<section class="o-stage__step o-wall" data-stage-step="1" data-step-label="Sun">
+  <div class="o-container">
+
+    <div class="o-survey">
+
+      <div class="o-survey__logo o-logo--wrap o-wall__logo">
+        {{> includes/logo url="images/logo-greenthumb.svg" alt="greenthumb logo" classname="o-wall__logo__image"}}
+      </div>
+
+      <figure class="o-survey__figure">
+        <img src="images/sun.png" alt="sun with glasses" class="o-image--sun o-survey__image">
+      </figure>
+
+      <h2 class="o-survey__title o-title o-title--default o-color--default">
+        First, set the amount <span class="o-breakline--mobile-down"></span> of<span
+          class="o-breakline--tablet-up"></span> <em class="t-text--bold">sunlight</em> your <span
+          class="o-breakline--mobile-down"></span>plant will get
+      </h2>
+
+      <div class="o-survey__wrap">
+        <div class="o-survey__options">
+          {{> components/options attributes="data-js-options" classname="c-options c-options--primary" options=survey.sun.options }}
+        </div>
+
+        <div class="o-survey__buttons">
+          <button data-stage-command="next"
+            class="c-btn c-btn--primary c-btn--large c-btn--has-icon t-text--light o-survey__button">
+            <span class="c-btn__icon">
+              <svg class="o-icon o-icon--1x">
+                <use xlink:href="images/icons.svg#svg-arrow-right" /></svg>
+            </span>
+            <span class="c-btn__text">Next</span>
+          </button>
+          <button data-stage-command="prev"
+            class="c-btn c-btn--default c-btn--large c-btn--has-icon t-text--light o-survey__button">
+            <span class="c-btn__icon">
+              <svg class="o-icon o-icon--1x">
+                <use xlink:href="images/icons.svg#svg-arrow-left" /></svg>
+            </span>
+            <span class="c-btn__text">Home</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
