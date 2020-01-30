@@ -3,7 +3,7 @@
   padding: 25px 0 70px;
 
   @media (min-width: $breakpoint-tablet) {
-    padding-top: 65px
+    padding-top: 65px;
   }
 
   &__logo {
@@ -86,6 +86,15 @@
           $button-bg-default-color,
           $button-text-default-color,
           $button-icon-default-color
+        );
+      }
+
+      &:hover {
+        @include button-style(
+          $button-border-primary-color,
+          $button-bg-primary-color,
+          $button-text-primary-color,
+          $button-icon-primary-color
         );
       }
     }

@@ -36,7 +36,10 @@ export default (argv, mode) => ({
         query: {
           inlineRequires: '/images/',
           rootRelative: './src/templates/',
-          partialDirs: ['./src/templates/'],
+          partialDirs: [
+            './src/templates/includes',
+            './src/templates/components',
+          ],
         },
       },
       {

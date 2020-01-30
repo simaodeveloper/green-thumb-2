@@ -58,7 +58,7 @@
     font-size: 16px;
 
     &::placeholder {
-      @include color($color-fourth, .4);
+      @include color($color-fourth, 0.4);
     }
   }
 
@@ -74,6 +74,15 @@
         $button-icon-default-color
       );
       float: right;
+
+      &:hover {
+        @include button-style(
+          $button-border-primary-color,
+          $button-bg-primary-color,
+          $button-text-primary-color,
+          $button-icon-primary-color
+        );
+      }
     }
   }
 
